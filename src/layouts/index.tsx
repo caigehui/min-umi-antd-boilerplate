@@ -1,20 +1,27 @@
-import React from 'react';
-import styles from './index.css';
+import * as React from 'react';
+import { USER_LAYOUT_ROUTES } from '@/config';
+import UserLayout from './UserLayout';
+import PageLayout from './PageLayout';
+import { LocaleProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 
-export type BasicLayoutComponent<P> = React.SFC<P>;
-
-export interface BasicLayoutProps extends React.Props<any> {
-  history?: History;
+interface MainLayoutProps {
   location?: Location;
 }
 
-const BasicLayout: BasicLayoutComponent<BasicLayoutProps> = props => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children, location, ...restProps }) => {
+  if (USER_LAYOUT_ROUTES.some(pathname => location.pathname.toLowerCase() === pathname)) {
+    return <UserLayout {...restProps}>{children}</UserLayout>;
+  }
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-      {props.children}
-    </div>
+    <PageLayout location={location} {...restProps}>
+      {children}
+    </PageLayout>
   );
 };
 
-export default BasicLayout;
+export default props => (
+  <LocaleProvider locale={zhCN}>
+    <MainLayout {...props} />
+  </LocaleProvider>
+);
