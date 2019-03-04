@@ -9,7 +9,7 @@ export default {
         antd: true,
         dva: true,
         dynamicImport: { webpackChunkName: true },
-        title: 'min-umi-boilerplate',
+        title: 'min-umi-antd-boilerplate',
         dll: true,
         routes: {
           exclude: [
