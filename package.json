@@ -4,7 +4,8 @@
     "start": "umi dev",
     "build": "umi build",
     "test": "umi test",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src mock --fix",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src mock",
+    "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx src mock --fix",
     "prettier": "check-prettier lint",
     "prettier-fix": "node ./scripts/prettier.js",
     "lint-staged": "lint-staged"
@@ -49,7 +50,7 @@
       "node ./scripts/prettier.js",
       "git add"
     ],
-    "src/*.{js,ts,tsx,jsx}": [
+    "src/**/*.{js,ts,tsx,jsx}": [
       "eslint --ext .js,.jsx,.ts,.tsx src mock --fix",
       "git add"
     ]
