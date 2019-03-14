@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "test-app",
+  "name": "your-test-app",
   "builds": [{ "src": "public/**", "use": "@now/static" }],
-  "routes": [{ "src": "^(?!\/public\/).*$", "dest": "public/index.html" }]
+  "routes": [{ "src": "^(?!/public/).*$", "dest": "public/index.html" }]
 }

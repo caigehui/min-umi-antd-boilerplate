@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "umi dev",
-    "build": "umi build",
+    "start": "cross-env UMI_ENV=dev port=8001 umi dev",
+    "build": "cross-env UMI_ENV=prod umi build",
     "test": "umi test",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src mock",
     "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx src mock --fix",
@@ -20,6 +20,7 @@
     "react-dom": "^16.8.3"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "@types/jest": "^23.3.12",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",

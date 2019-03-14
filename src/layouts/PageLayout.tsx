@@ -80,10 +80,11 @@ export default class PageLayout extends React.Component<PageLayoutProps, {}> {
   }
 
   renderLogo() {
+    const { menuCollapsed } = this.props;
     return (
       <div className={styles.logo}>
         <img src={require('../assets/logo.svg')} />
-        <span>{USER_LAYOUT_CONFIG.title}</span>
+        {!menuCollapsed && <span>{USER_LAYOUT_CONFIG.title}</span>}
       </div>
     );
   }
