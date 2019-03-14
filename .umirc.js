@@ -1,6 +1,8 @@
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
+  publicPath: '/public/',
+  outputPath: '/public/',
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     [

@@ -8,3 +8,8 @@
 
 🏉with **eslint** support, using typescript parser
 
+
+
+## deployment on Zeit.co/now
+
+> yarn deploy
