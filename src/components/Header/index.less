@@ -6,14 +6,18 @@
   display: flex;
   justify-content: space-between;
 }
-.trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-  &:hover {
-    color: @primary-color;
+.left {
+  display: flex;
+  align-items: center;
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: @primary-color;
+    }
   }
 }
 .user {
